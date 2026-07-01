@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NL VTO Menu Card · Salesforce Netherlands</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sf-navy: #032D60;
+  --sf-blue: #0176D3;
+  --sf-sky: #1B96FF;
+  --sf-cloud: #EAF5FE;
+  --sf-mint: #3DDC97;
+  --sf-teal: #0B827C;
+  --sf-orange: #FF6B00;
+  --sf-yellow: #FFD45A;
+  --sf-purple: #9050E9;
+  --sf-purple-dark: #6B39D7;
+  --sf-red: #EA001E;
+  --sf-red-dark: #C23934;
+  --ink: #181818;
+  --muted: #5C5F66;
+  --border: rgba(1,118,211,.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 4px 20px rgba(3,45,96,.10);
+  --shadow-lg: 0 12px 40px rgba(3,45,96,.16);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #F0F4F8;
+  color: var(--ink);
+  line-height: 1.5;
+}
+a { color: inherit; text-decoration: none; }
+
+/* ─── HEADER ─────────────────────────────── */
+.site-header {
+  background: var(--sf-navy);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 12px rgba(0,0,0,.25);
+}
+.header-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sf-logo {
+  display: flex; align-items: center;
+}
+.header-nav {
+  display: flex; align-items: center; gap: 6px;
+}
+.nav-link {
+  color: rgba(255,255,255,.75);
+  font-size: 13px; font-weight: 600;
+  padding: 6px 14px; border-radius: 8px;
+  transition: all .2s;
+}
+.nav-link:hover { background: rgba(255,255,255,.1); color: white; }
+.nav-cta {
+  background: var(--sf-orange);
+  color: white !important;
+  border-radius: 8px; padding: 7px 16px;
+  font-size: 13px; font-weight: 700;
+  transition: background .2s;
+}
+.nav-cta:hover { background: #e05e00; }
+
+/* ─── HERO ───────────────────────────────── */
+.hero {
+  background: linear-gradient(145deg, #032D60 0%, #074E9B 55%, #0176D3 100%);
+  color: white;
+  padding: 64px 24px 56px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(27,150,255,.12);
+  top: -200px; right: -150px;
+  pointer-events: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.05);
+  bottom: -100px; left: -80px;
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 480px;
+  gap: 48px; align-items: center;
+  position: relative; z-index: 2;
+}
+.hero-eyebrow {
+  font-family: 'Fraunces', Georgia, serif;
+  font-size: 13px; font-weight: 300; font-style: italic;
+  letter-spacing: .3px;
+  color: rgba(255,255,255,.75); margin-bottom: 16px;
+}
+.hero h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 950; line-height: .95;
+  letter-spacing: -2px; margin-bottom: 20px;
+}
+.hero-sub {
+  font-size: 16px; color: #D8ECFF;
+  max-width: 520px; line-height: 1.6; margin-bottom: 28px;
+}
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(90deg, var(--sf-orange), #FFB000);
+  color: white; font-weight: 800; font-size: 15px;
+  padding: 13px 26px; border-radius: 99px;
+  box-shadow: 0 8px 24px rgba(255,107,0,.35);
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,107,0,.45); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+  color: white; font-weight: 700; font-size: 15px;
+  padding: 13px 26px; border-radius: 99px;
+  transition: background .2s;
+}
+.btn-secondary:hover { background: rgba(255,255,255,.2); }
+
+/* ─── GRANT BANNER ───────────────────────── */
+.grant-banner {
+  background: linear-gradient(90deg, var(--sf-teal), #0B9E96);
+  color: white; padding: 12px 24px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  font-size: 14px; font-weight: 600;
+}
+.grant-banner strong { color: var(--sf-yellow); }
+.grant-banner .pill-mini {
+  background: rgba(255,255,255,.2);
+  border-radius: 99px; padding: 2px 10px; font-size: 11px; font-weight: 800;
+  white-space: nowrap;
+}
+
+/* ─── FILTER BAR ─────────────────────────── */
+.filter-section {
+  background: white;
+  border-bottom: 1px solid var(--border);
+  position: sticky; top: 64px; z-index: 90;
+  box-shadow: 0 2px 8px rgba(3,45,96,.06);
+}
+.filter-inner {
+  max-width: 1200px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex; align-items: center; gap: 8px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  height: 56px;
+}
+.filter-inner::-webkit-scrollbar { display: none; }
+.filter-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 18px; border-radius: 99px;
+  border: 1.5px solid var(--border);
+  background: transparent;
+  font-family: inherit; font-size: 13px; font-weight: 700;
+  color: var(--muted); cursor: pointer;
+  white-space: nowrap; transition: all .2s;
+}
+.filter-btn:hover { border-color: var(--sf-blue); color: var(--sf-blue); background: var(--sf-cloud); }
+.filter-btn.active {
+  background: var(--sf-navy); color: white; border-color: var(--sf-navy);
+}
+.filter-btn .dot {
+  width: 8px; height: 8px; border-radius: 50%;
+}
+
+/* ─── ACTIVITIES GRID ────────────────────── */
+.activities-section {
+  max-width: 1200px; margin: 0 auto; padding: 40px 24px;
+}
+.section-heading {
+  font-size: 13px; font-weight: 900;
+  color: var(--sf-blue);
+  text-transform: uppercase; letter-spacing: 1.4px;
+  margin-bottom: 24px;
+  display: flex; align-items: center; gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+.count-badge {
+  background: var(--sf-cloud); color: var(--sf-blue);
+  font-size: 12px; font-weight: 800;
+  padding: 3px 10px; border-radius: 99px;
+}
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 20px;
+}
+.activity-card {
+  background: white; border-radius: var(--radius);
+  box-shadow: 0 2px 12px rgba(3,45,96,.07);
+  border: 1px solid rgba(1,118,211,.10);
+  display: flex; flex-direction: column;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.activity-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(3,45,96,.13); }
+.card-top {
+  height: 6px;
+}
+.card-body { padding: 20px 22px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+.card-category {
+  display: flex; align-items: center; gap: 8px;
+}
+.cat-icon {
+  width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 16px; flex-shrink: 0;
+}
+.cat-label {
+  font-size: 10px; font-weight: 800; text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+.card-title {
+  font-size: 16px; font-weight: 800;
+  color: var(--sf-navy); line-height: 1.2;
+}
+.card-desc {
+  font-size: 13.5px; color: #40444d; line-height: 1.55; flex: 1;
+}
+.card-tags {
+  display: flex; flex-wrap: wrap; gap: 5px;
+}
+.tag {
+  font-size: 11px; font-weight: 800;
+  border-radius: 99px; padding: 2px 9px;
+  white-space: nowrap;
+}
+.tag.free  { background: #E9FBEF; color: #16834A; }
+.tag.cost  { background: #FFF3DA; color: #A15C00; }
+.tag.dutch { background: #FFECEF; color: #C01048; }
+.tag.team  { background: #EAF5FE; color: #0176D3; }
+.tag.cust  { background: #FFF8CF; color: #8A6100; }
+.tag.virt  { background: #F3E8FF; color: #7A35C9; }
+.tag.solo  { background: #F4F4F5; color: #5F6169; }
+.tag.time  { background: #EEF4FF; color: #1849A9; }
+.card-footer {
+  padding: 14px 22px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.btn-link {
+  flex: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 5px;
+  padding: 9px 10px; border-radius: 8px;
+  font-size: 12px; font-weight: 700;
+  white-space: nowrap;
+  transition: all .2s;
+}
+.btn-link svg { width: 14px; height: 14px; }
+.btn-signup {
+  background: var(--sf-blue); color: white;
+}
+.btn-signup:hover { background: #0060B0; }
+.btn-info {
+  background: var(--sf-cloud); color: var(--sf-blue);
+  border: 1px solid rgba(1,118,211,.2);
+}
+.btn-info:hover { background: #D4EBFD; }
+.btn-slack {
+  background: #4A154B; color: white;
+}
+.btn-slack:hover { background: #3a0f3c; }
+
+/* category colour helpers */
+.env  .card-top { background: linear-gradient(90deg,#0B827C,#3DDC97); }
+.env  .cat-icon { background: linear-gradient(135deg,#0B827C,#3DDC97); color: white; }
+.env  .cat-label { color: #0B827C; }
+.comm .card-top { background: linear-gradient(90deg,#C23934,#FF8A00); }
+.comm .cat-icon { background: linear-gradient(135deg,#C23934,#FF8A00); color: white; }
+.comm .cat-label { color: #C23934; }
+.edu  .card-top { background: linear-gradient(90deg,#0176D3,#1B96FF); }
+.edu  .cat-icon { background: linear-gradient(135deg,#0176D3,#1B96FF); color: white; }
+.edu  .cat-label { color: #0176D3; }
+.pro  .card-top { background: linear-gradient(90deg,#6B39D7,#BA7CFF); }
+.pro  .cat-icon { background: linear-gradient(135deg,#6B39D7,#BA7CFF); color: white; }
+.pro  .cat-label { color: #6B39D7; }
+
+/* ─── QUICK PICK ─────────────────────────── */
+.quickpick-section {
+  background: linear-gradient(145deg, #032D60, #063B78);
+  color: white; padding: 60px 24px;
+}
+.quickpick-inner { max-width: 1200px; margin: 0 auto; }
+.quickpick-inner h2 {
+  font-size: 30px; font-weight: 950; margin-bottom: 6px;
+}
+.quickpick-sub { color: #D8ECFF; font-size: 15px; margin-bottom: 36px; }
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 14px;
+}
+.time-card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-sm);
+  padding: 18px 16px;
+  cursor: pointer; transition: all .2s;
+  text-decoration: none; color: white;
+  display: block;
+}
+.time-card:hover {
+  background: rgba(27,150,255,.25);
+  border-color: var(--sf-sky);
+  transform: translateY(-2px);
+}
+.time-card .time-label {
+  font-size: 11px; font-weight: 900; color: var(--sf-yellow);
+  text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+}
+.time-card .time-activity {
+  font-size: 14px; font-weight: 700; line-height: 1.3;
+}
+
+/* ─── QUOTES ─────────────────────────────── */
+.quotes-section { padding: 64px 24px; background: white; }
+.quotes-inner { max-width: 1200px; margin: 0 auto; }
+.quotes-inner h2 {
+  font-size: 11px; font-weight: 900; color: var(--sf-blue);
+  text-transform: uppercase; letter-spacing: 1.4px;
+  margin-bottom: 24px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--border);
+}
+.quotes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 18px;
+}
+.quote-card {
+  background: #F8FBFF; border-radius: var(--radius);
+  padding: 22px 24px;
+  border-left: 4px solid var(--sf-blue);
+  box-shadow: var(--shadow);
+}
+.quote-card:nth-child(2) { border-color: #28A745; }
+.quote-card:nth-child(3) { border-color: var(--sf-orange); }
+.quote-card:nth-child(4) { border-color: var(--sf-red); }
+.quote-card:nth-child(5) { border-color: var(--sf-purple); }
+.quote-text {
+  font-size: 14px; font-style: italic; line-height: 1.55;
+  color: #30343b; margin-bottom: 14px;
+}
+.quote-text::before { content: '\201C'; }
+.quote-text::after  { content: '\201D'; }
+.quote-author { font-size: 13px; font-weight: 800; color: var(--sf-navy); }
+.quote-role   { font-size: 12px; color: var(--muted); margin-top: 2px; }
+
+/* ─── TEAM ───────────────────────────────── */
+.team-section { padding: 64px 24px; background: #F0F4F8; }
+.team-inner { max-width: 1200px; margin: 0 auto; }
+.team-inner h2 {
+  font-size: 11px; font-weight: 900; color: var(--sf-blue);
+  text-transform: uppercase; letter-spacing: 1.4px;
+  margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border);
+}
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+.team-card {
+  background: white; border-radius: var(--radius-sm);
+  box-shadow: var(--shadow); border: 1px solid var(--border);
+  padding: 20px 18px;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  transition: transform .2s, box-shadow .2s;
+}
+.team-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.team-avatar {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sf-blue), var(--sf-sky));
+  display: grid; place-items: center;
+  font-size: 16px; font-weight: 900; color: white;
+  flex-shrink: 0; margin-bottom: 4px;
+  overflow: hidden;
+}
+.team-avatar img {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+}
+.team-name { font-size: 14px; font-weight: 800; color: var(--sf-navy); line-height: 1.2; }
+.team-title { font-size: 11.5px; color: var(--muted); line-height: 1.4; flex: 1; }
+.btn-team-slack {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: #4A154B; color: white;
+  font-size: 11px; font-weight: 700;
+  padding: 5px 12px; border-radius: 6px;
+  margin-top: 6px; transition: background .2s;
+}
+.btn-team-slack:hover { background: #3a0f3c; }
+
+/* ─── FOOTER ─────────────────────────────── */
+footer {
+  background: var(--sf-navy); color: white;
+  padding: 20px 32px;
+}
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: flex-end; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.footer-logo { font-size: 15px; font-weight: 950; color: var(--sf-sky); }
+.footer-logo span { color: white; }
+.footer-links { display: flex; gap: 20px; }
+.footer-links a { color: #D8ECFF; font-size: 13px; font-weight: 600; text-decoration: none; transition: color .2s; }
+.footer-links a:hover { color: white; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,.35); }
+
+/* ─── ASTRO VIDEO ────────────────────────── */
+.footer-astro {
+  position: relative; height: 120px; width: 80px;
+  overflow: hidden; flex-shrink: 0;
+}
+.footer-astro video {
+  height: 120px; width: auto;
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+/* ─── RESPONSIVE ─────────────────────────── */
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-video { display: none; }
+  .header-nav { display: none; }
+}
+@media (max-width: 480px) {
+  .activities-grid { grid-template-columns: 1fr; }
+  .time-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ─── COLLEAGUES SECTION ─────────────────── */
+.colleagues-section {
+  background: white; padding: 64px 24px;
+  border-top: 1px solid var(--border);
+}
+.colleagues-inner { max-width: 1200px; margin: 0 auto; }
+.colleagues-inner h2 {
+  font-size: 11px; font-weight: 900; color: var(--sf-blue);
+  text-transform: uppercase; letter-spacing: 1.4px;
+  margin-bottom: 24px; padding-bottom: 12px; border-bottom: 2px solid var(--border);
+}
+.colleagues-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+.colleague-card {
+  background: #F8FBFF; border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 10px;
+  justify-content: space-between;
+}
+.colleague-desc { flex: 1; }
+.colleague-card-top {
+  display: flex; align-items: center; gap: 14px;
+}
+.colleague-emoji {
+  font-size: 32px; flex-shrink: 0;
+}
+.colleague-meta { flex: 1; }
+.colleague-name { font-size: 15px; font-weight: 800; color: var(--sf-navy); }
+.colleague-challenge { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--sf-blue); margin-top: 2px; }
+.colleague-desc { font-size: 13.5px; color: #40444d; line-height: 1.55; }
+.colleague-footer {
+  display: flex; gap: 8px; flex-wrap: wrap;
+}
+.btn-donate {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(90deg, var(--sf-orange), #FFB000);
+  color: white; font-weight: 800; font-size: 12px;
+  padding: 8px 16px; border-radius: 8px;
+  transition: transform .2s, box-shadow .2s;
+}
+.btn-donate:hover { transform: translateY(-1px); box-shadow: 0 6px 16px rgba(255,107,0,.35); }
+.btn-slack-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: #4A154B; color: white; font-weight: 700; font-size: 12px;
+  padding: 8px 14px; border-radius: 8px;
+  transition: background .2s;
+}
+.btn-slack-link:hover { background: #3a0f3c; }
+.benevity-match-note {
+  font-size: 11px; color: var(--sf-blue); font-weight: 700;
+  background: var(--sf-cloud); border-radius: 6px;
+  padding: 4px 10px; align-self: center;
+}
+
+/* ─── VIDEO EMBED ────────────────────────── */
+.hero-video {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(3,45,96,.35);
+  aspect-ratio: 16/9;
+  background: #000;
+  min-width: 380px;
+}
+.hero-video iframe {
+  width: 100%; height: 100%;
+  border: none; display: block;
+}
+
+/* hidden utility */
+.hidden { display: none !important; }
+</style>
+</head>
+<body>
+
+<!-- ─── HEADER ───────────────────────────── -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="sf-logo">
+      <img src="Salesforce-Logo.png" alt="Salesforce" style="height:36px;width:auto;display:block;">
+    </div>
+    <nav class="header-nav">
+      <a href="#activities" class="nav-link">Activities</a>
+      <a href="#quickpick" class="nav-link">Quick Pick</a>
+      <a href="#quotes" class="nav-link">Stories</a>
+      <a href="#team" class="nav-link">Team</a>
+      <a href="https://salesforce.benevity.org" target="_blank" rel="noopener" class="nav-cta">Log Hours →</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ─── GRANT BANNER ──────────────────────── -->
+<div class="grant-banner">
+  <span class="pill-mini">NNAOVTO Q2</span>
+  <span>Bring a customer to any activity and claim a <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1780319117860549" target="_blank" rel="noopener" style="color:var(--sf-yellow);text-decoration:underline;font-weight:800;">$250 donation grant</a>.</span>
+</div>
+
+<!-- ─── HERO ──────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <p class="hero-eyebrow">Salesforce Netherlands · Employee Impact Council</p>
+      <h1>Make your<br>hours count.</h1>
+      <p class="hero-sub">Your guide to Volunteer Time Off in the Netherlands — what to do, who to bring, and how to create the biggest impact. Every year, every one of us gets 56 paid hours to change the world.</p>
+      <div class="hero-actions">
+        <a href="#activities" class="btn-primary">
+          Open impact menu
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" width="18" height="18"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"/></svg>
+        </a>
+        <a href="https://salesforce.benevity.org" target="_blank" rel="noopener" class="btn-secondary">
+          Log on Benevity →
+        </a>
+      </div>
+    </div>
+    <div class="hero-video">
+      <iframe
+        src="https://play.vidyard.com/AHGU7STF2JsSoe3gRkxBzj"
+        width="640" height="360"
+        scrolling="no" frameborder="0"
+        allowtransparency="true" allowfullscreen
+        referrerpolicy="no-referrer-when-downgrade"
+        title="25 Years of Salesforce Impact">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FILTER BAR ────────────────────────── -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <button class="filter-btn active" data-filter="all">
+      All activities
+    </button>
+    <button class="filter-btn" data-filter="env">
+      <span class="dot" style="background:#3DDC97"></span>🌱 Environment
+    </button>
+    <button class="filter-btn" data-filter="comm">
+      <span class="dot" style="background:#FF8A00"></span>❤️ Community
+    </button>
+    <button class="filter-btn" data-filter="edu">
+      <span class="dot" style="background:#1B96FF"></span>🎓 Education
+    </button>
+    <button class="filter-btn" data-filter="pro">
+      <span class="dot" style="background:#BA7CFF"></span>💼 Pro Bono
+    </button>
+    <button class="filter-btn" data-filter="fundraiser">
+      <span class="dot" style="background:#FF6B00"></span>🧡 Fundraisers
+    </button>
+  </div>
+</div>
+
+<!-- ─── ACTIVITIES ────────────────────────── -->
+<section class="activities-section" id="activities">
+  <div class="section-heading">
+    Activities <span class="count-badge" id="count-badge">14</span>
+  </div>
+  <div class="activities-grid" id="activities-grid">
+
+    <!-- ENV 1 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Serve the City</div>
+        <div class="card-desc">Tend a vegetable garden or join the Vondelpark cleanup crew. Perfect as a working lunch, walk &amp; talk, or team outing.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag team">Team</span>
+          <span class="tag time">1–4 hrs</span>
+          <span class="tag cust">Bring your customer ★</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/cause/528-5826691497132_ff53#!tab-volunteer" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Sign up on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://amsterdam.servethecity.net" target="_blank" rel="noopener" class="btn-link btn-info">
+          More information
+        </a>
+      </div>
+    </div>
+
+    <!-- ENV 2 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Plastic Whale</div>
+        <div class="card-desc">Fish plastic from Amsterdam canals on a private boat with a skipper. Min. 8 people. Voted best NNAOVTO activity.</div>
+        <div class="card-tags">
+          <span class="tag cost">€68/person</span>
+          <span class="tag team">Team min 8</span>
+          <span class="tag time">2–3 hrs</span>
+          <span class="tag cust">Bring your customer ★</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/20173/" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Log hours on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://plasticwhale.com/plastic-fishing" target="_blank" rel="noopener" class="btn-link btn-info">
+          More information
+        </a>
+      </div>
+    </div>
+
+    <!-- ENV 3 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Trash Picking</div>
+        <div class="card-desc">Grab a picker from REWS and clean up the neighbourhood around the office. Zero prep, maximum visibility.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag team">Team</span>
+          <span class="tag time">1–2 hrs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/20172/" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Sign up on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1778086193297209" target="_blank" rel="noopener" class="btn-link btn-info">
+          #vto-nl
+        </a>
+      </div>
+    </div>
+
+    <!-- ENV 4 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">MapSwipe</div>
+        <div class="card-desc">Swipe satellite images on your phone to help humanitarian organisations respond to crises worldwide. Start in minutes.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag virt">Virtual</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag time">30 min+</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/19386" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Sign up on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://mapswipe.org" target="_blank" rel="noopener" class="btn-link btn-info">
+          More information
+        </a>
+      </div>
+    </div>
+
+    <!-- ENV 5 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Plant Flowers at Home</div>
+        <div class="card-desc">Order a free pack of special flower seeds and turn your garden or balcony into a retreat for bees and butterflies. Counts as VTO!</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag virt">At home</span>
+          <span class="tag time">30 min</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.natuurmonumenten.nl/aanvragen/bij-en-vlinderpakket" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Order free seed pack
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1778086193297209" target="_blank" rel="noopener" class="btn-link btn-info">In #vto-nl</a>
+      </div>
+    </div>
+
+    <!-- ENV 6 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Wheelmap</div>
+        <div class="card-desc">Map wheelchair-accessible places in your city using OpenStreetMap. A quick virtual VTO that makes a real difference for people with mobility challenges.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag virt">Virtual</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag time">30 min+</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://wheelmap.org" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Start mapping
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1767962809000000" target="_blank" rel="noopener" class="btn-link btn-info">#vto-nl</a>
+      </div>
+    </div>
+
+    <!-- ENV 7 -->
+    <div class="activity-card env" data-cat="env">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🌱</div>
+          <span class="cat-label">Environment &amp; Sustainability</span>
+        </div>
+        <div class="card-title">Volunteer at a Vegetable Garden</div>
+        <div class="card-desc">Help maintain a community vegetable garden in Amsterdam — weeding, planting and harvesting alongside local residents. Hands in the soil, fresh air, real impact.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag team">Team</span>
+          <span class="tag time">2–4 hrs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/20255/" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Sign up on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- COMM 2 -->
+    <div class="activity-card comm" data-cat="comm">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">❤️</div>
+          <span class="cat-label">Community &amp; Social</span>
+        </div>
+        <div class="card-title">BOOST Amsterdam</div>
+        <div class="card-desc">Cleaning, painting and gardening at a community hub helping newcomers integrate in Amsterdam. Hands-on and social.<br><em style="font-size:12px;color:#0B827C;font-style:italic;">With a bigger group willing to make impact?</em></div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag team">Team</span>
+          <span class="tag time">3–8 hrs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1772810152000000" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More info in #vto-nl
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce-internal.slack.com/team/W0114NKQUJH" target="_blank" rel="noopener" class="btn-link btn-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          DM Morena
+        </a>
+      </div>
+    </div>
+
+    <!-- COMM 3 -->
+    <div class="activity-card comm" data-cat="comm">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">❤️</div>
+          <span class="cat-label">Community &amp; Social</span>
+        </div>
+        <div class="card-title">Postcards for Lonely Elderly</div>
+        <div class="card-desc">Write a postcard to a lonely elderly person. Ten minutes, zero logistics, meaningful connection. Perfect for customer events.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag cust">Bring your customer ★</span>
+          <span class="tag time">10 min</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://kaartjevoorouderen.nl/#Home" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More information
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1778484594000000" target="_blank" rel="noopener" class="btn-link btn-slack">
+          #vto-nl
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- EDU 5 -->
+    <div class="activity-card edu" data-cat="edu">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">🎓</div>
+          <span class="cat-label">Education &amp; Youth</span>
+        </div>
+        <div class="card-title">Co-Teach Informatica 🇳🇱</div>
+        <div class="card-desc">Co-teach IT classes at local high schools. Full materials and teacher training provided. Multi-session commitment.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag dutch">Dutch required</span>
+          <span class="tag time">4–5 × 2 hrs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://co-teach.nl/" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More information
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1781285347167939" target="_blank" rel="noopener" class="btn-link btn-slack">#vto-nl</a>
+      </div>
+    </div>
+
+    <!-- PRO 1 -->
+    <div class="activity-card pro" data-cat="pro">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">💼</div>
+          <span class="cat-label">Pro Bono &amp; Skills-Based</span>
+        </div>
+        <div class="card-title">Impact Matters</div>
+        <div class="card-desc">Match legal, IT, strategy or comms skills to nonprofits that need exactly what you do at work. Project-based, flexible.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag time">Project-based</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://impactmatters.nl" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More information
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.benevity.org/volunteer/external/track" target="_blank" rel="noopener" class="btn-link btn-slack">Log on Benevity</a>
+      </div>
+    </div>
+
+    <!-- PRO 2 -->
+    <div class="activity-card pro" data-cat="pro">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">💼</div>
+          <span class="cat-label">Pro Bono &amp; Skills-Based</span>
+        </div>
+        <div class="card-title">KidsRights</div>
+        <div class="card-desc">Use your Salesforce expertise to support KidsRights, a global children's rights organisation based in Amsterdam.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Salesforce skills</span>
+          <span class="tag time">Project-based</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://kidsrights.org" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More information
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.benevity.org/cause/528-5826691497132_ff53#!tab-volunteer" target="_blank" rel="noopener" class="btn-link btn-slack">Log on Benevity</a>
+      </div>
+    </div>
+
+    <!-- PRO 3 -->
+    <div class="activity-card pro" data-cat="pro">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">💼</div>
+          <span class="cat-label">Pro Bono &amp; Skills-Based</span>
+        </div>
+        <div class="card-title">Big Friends</div>
+        <div class="card-desc">Mentor a child from a low-income family in Amsterdam, Utrecht or Rotterdam. Multi-month commitment, deeply rewarding.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag time">2–4 ×/month</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://bigfriends.nl" target="_blank" rel="noopener" class="btn-link btn-signup">
+          More information
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.benevity.org/volunteer/external/track" target="_blank" rel="noopener" class="btn-link btn-slack">Log on Benevity</a>
+      </div>
+    </div>
+
+    <!-- PRO 4 -->
+    <div class="activity-card pro" data-cat="pro">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">💼</div>
+          <span class="cat-label">Pro Bono &amp; Skills-Based</span>
+        </div>
+        <div class="card-title">Agents for Impact Fellowship</div>
+        <div class="card-desc">A structured 6-month fellowship where you partner with nonprofits building Agentforce solutions (~56 VTO hours). Keep an eye on <strong>#community-pro-bono</strong> for when the next cohort opens.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Salesforce skills</span>
+          <span class="tag time">~56 hrs · 6 months</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB" target="_blank" rel="noopener" class="btn-link btn-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Watch #community-pro-bono
+        </a>
+      </div>
+    </div>
+
+    <!-- PRO 5 -->
+    <div class="activity-card pro" data-cat="pro">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <div class="card-category">
+          <div class="cat-icon">💼</div>
+          <span class="cat-label">Pro Bono &amp; Skills-Based</span>
+        </div>
+        <div class="card-title">Impact Exchange</div>
+        <div class="card-desc">Salesforce's global marketplace connecting employees with nonprofit pro bono projects matched to your skills — tech, strategy, marketing, HR and more. Browse open projects and apply directly.</div>
+        <div class="card-tags">
+          <span class="tag free">Free</span>
+          <span class="tag solo">Solo</span>
+          <span class="tag time">Project-based</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/external/track" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Browse on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── COLLEAGUES ────────────────────────── -->
+<section class="colleagues-section" id="colleagues">
+  <div class="colleagues-inner">
+    <h2>Fundraisers</h2>
+    <div class="colleagues-grid">
+
+      <div class="colleague-card">
+        <div class="colleague-card-top">
+          <div class="colleague-emoji">🚴</div>
+          <div class="colleague-meta">
+            <div class="colleague-name">Erwin Boeren &amp; team</div>
+            <div class="colleague-challenge">Mont Ventoux · September 2026</div>
+          </div>
+        </div>
+        <div class="colleague-desc">A team of 20 Salesforce, Nextview and Heijmans riders will climb Mont Ventoux in September to raise funds for the Vicki Brownhuis — a vital walk-in centre supporting people living with cancer in Den Bosch.</div>
+        <div class="colleague-footer">
+          <a href="https://www.geef.nl/nl/actie/vicki-brownhuis-mont-ventoux-2026/teamleden" target="_blank" rel="noopener" class="btn-donate">
+            Donate on geef.nl →
+          </a>
+          <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1779350565714919" target="_blank" rel="noopener" class="btn-slack-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+            See in #vto-nl
+          </a>
+          <span class="benevity-match-note">100% Salesforce match</span>
+        </div>
+      </div>
+
+      <div class="colleague-card">
+        <div class="colleague-card-top">
+          <div class="colleague-emoji">🚶</div>
+          <div class="colleague-meta">
+            <div class="colleague-name">Thomas Boersma</div>
+            <div class="colleague-challenge">Walking for Foundation Long COVID</div>
+          </div>
+        </div>
+        <div class="colleague-desc">After 1.5 years housebound with Long COVID, Thomas is walking 15 minutes a day to raise money for Foundation Long COVID research. Salesforce will 100% match your donation.</div>
+        <div class="colleague-footer">
+          <a href="https://www.steunstichtinglongcovid.nl/nl-NL/project/fighting-for-an-invisible-disease-within-limits/" target="_blank" rel="noopener" class="btn-donate">
+            Donate now →
+          </a>
+          <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB/p1775722422154409" target="_blank" rel="noopener" class="btn-slack-link">
+            <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+            See in #vto-nl
+          </a>
+          <span class="benevity-match-note">100% Salesforce match</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUICK PICK ─────────────────────────── -->
+<section class="quickpick-section" id="quickpick">
+  <div class="quickpick-inner">
+    <h2>How much time do you have?</h2>
+    <p class="quickpick-sub">Jump straight to the right activity for your schedule.</p>
+    <div class="time-grid">
+      <a href="#activities" onclick="scrollToCard('Postcards for Lonely Elderly')" class="time-card">
+        <div class="time-label">⏱ 10 minutes</div>
+        <div class="time-activity">Postcard for a lonely elderly person</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('Trash Picking')" class="time-card">
+        <div class="time-label">⏱ 1 hour</div>
+        <div class="time-activity">Trash Picking around the office</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('MapSwipe')" class="time-card">
+        <div class="time-label">⏱ 30 min — virtual</div>
+        <div class="time-activity">MapSwipe from your couch</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('BOOST')" class="time-card">
+        <div class="time-label">⏱ Full day · team</div>
+        <div class="time-activity">BOOST Amsterdam NLdoet day</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('Plastic Whale')" class="time-card">
+        <div class="time-label">⏱ 2–3 hrs · team</div>
+        <div class="time-activity">Plastic fishing on Amsterdam canals</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('Vegetable Garden')" class="time-card">
+        <div class="time-label">⏱ Half day · outdoor</div>
+        <div class="time-activity">Volunteer at a vegetable garden</div>
+      </a>
+      <a href="#activities" onclick="scrollToCard('Big Friends')" class="time-card">
+        <div class="time-label">⏱ Ongoing</div>
+        <div class="time-activity">Mentoring or Pro Bono project</div>
+      </a>
+      <a href="https://salesforce.benevity.org" target="_blank" rel="noopener" class="time-card">
+        <div class="time-label">📋 After any activity</div>
+        <div class="time-activity">Log your hours on Benevity →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── QUOTES ────────────────────────────── -->
+<section class="quotes-section" id="quotes">
+  <div class="quotes-inner">
+    <h2>Colleague stories</h2>
+    <div class="quotes-grid">
+      <div class="quote-card">
+        <p class="quote-text">It was a truly impressive experience which made us all realise once again how fortunate we are.</p>
+        <div class="quote-author">Lucas Cammelbeeck</div>
+        <div class="quote-role">After cooking Hutspot for 50+ guests at Stoelenproject</div>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">A heart-warming day full of long-lost connections. An 86-year-old lady from the community joined our team and helped us through the streets!</p>
+        <div class="quote-author">Nancy Refki</div>
+        <div class="quote-role">Amsterdam Zuid-Oost neighbourhood clean-up with Adyen</div>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">No big logistics, no extra planning — just pens, cards, and a few genuine minutes to connect with someone who might really need it.</p>
+        <div class="quote-author">Guusje Kwant</div>
+        <div class="quote-role">Postcard writing at a CBU customer event</div>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">Together we welcomed 32 students and helped them experience teamwork, creativity and business thinking.</p>
+        <div class="quote-author">Morena Artist Timas</div>
+        <div class="quote-role">Junior Business School, May 2026</div>
+      </div>
+      <div class="quote-card">
+        <p class="quote-text">One group blew us away by delivering a live Salesforce demo on the spot!</p>
+        <div class="quote-author">Erwin Boeren</div>
+        <div class="quote-role">Fontys Hogescholen CRM Masterclass</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ──────────────────────────────── -->
+<section class="team-section" id="team">
+  <div class="team-inner">
+    <h2>Employee Impact Council NL</h2>
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-W0114NKQUJH-5d4f31cbbfc0-512" alt="Morena Artist Timas" onerror="this.style.display='none'"></div>
+        <div class="team-name">Morena Artist Timas</div>
+        <div class="team-title">Executive Assistant</div>
+        <a href="https://salesforce-internal.slack.com/team/W0114NKQUJH" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01FTCV1QCX-55f73c69588a-512" alt="Erwin Boeren" onerror="this.style.display='none'"></div>
+        <div class="team-name">Erwin Boeren</div>
+        <div class="team-title">Distinguished Enterprise Architect</div>
+        <a href="https://salesforce-internal.slack.com/team/U01FTCV1QCX" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01FU2HQ6KH-12b062d8a0bd-512" alt="Nancy Refki" onerror="this.style.display='none'"></div>
+        <div class="team-name">Nancy Refki</div>
+        <div class="team-title">Employee Impact Program Manager, EMEA</div>
+        <a href="https://salesforce-internal.slack.com/team/U01FU2HQ6KH" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01G85GEAQJ-1bf7d0248a04-512" alt="Fer Lachman" onerror="this.style.display='none'"></div>
+        <div class="team-name">Fer Lachman</div>
+        <div class="team-title">Senior Executive Recruiter</div>
+        <a href="https://salesforce-internal.slack.com/team/U01G85GEAQJ" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01G90V32D9-213d1877a0f0-512" alt="Nina Gmachl-Eshuis" onerror="this.style.display='none'"></div>
+        <div class="team-name">Nina Gmachl-Eshuis</div>
+        <div class="team-title">AVP Sales</div>
+        <a href="https://salesforce-internal.slack.com/team/U01G90V32D9" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01GEKNRQLC-11c1c47110fa-512" alt="Hanne Pijpers" onerror="this.style.display='none'"></div>
+        <div class="team-name">Hanne Pijpers</div>
+        <div class="team-title">Senior Account SE</div>
+        <a href="https://salesforce-internal.slack.com/team/U01GEKNRQLC" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01GF027A20-426bb45a2f10-512" alt="Roland de Wit" onerror="this.style.display='none'"></div>
+        <div class="team-name">Roland de Wit</div>
+        <div class="team-title">Director, Change Management</div>
+        <a href="https://salesforce-internal.slack.com/team/U01GF027A20" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U01GYKVP96C-32a9fe30101b-512" alt="Patricia Marks" onerror="this.style.display='none'"></div>
+        <div class="team-name">Patricia Marks</div>
+        <div class="team-title">Salesforce Innovation Center Director, EMEA North</div>
+        <a href="https://salesforce-internal.slack.com/team/U01GYKVP96C" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U06HQJFSCRZ-6aae2d267ce8-512" alt="Sarah Nkobo Bua" onerror="this.style.display='none'"></div>
+        <div class="team-name">Sarah Nkobo Bua</div>
+        <div class="team-title">Senior Success Manager</div>
+        <a href="https://salesforce-internal.slack.com/team/U06HQJFSCRZ" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar"><img src="https://ca.slack-edge.com/E7T5PNK3P-U0AG1675L3C-9f1c6fcf951a-512" alt="Barry Wildhagen" onerror="this.style.display='none'"></div>
+        <div class="team-name">Barry Wildhagen</div>
+        <div class="team-title">Community of Practice Director</div>
+        <a href="https://salesforce-internal.slack.com/team/U0AG1675L3C" target="_blank" rel="noopener" class="btn-team-slack">
+          <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zm1.271 0a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zm0 1.271a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zm10.122 2.521a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zm-1.268 0a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zm-2.523 10.122a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zm0-1.268a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+          Contact via Slack
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ────────────────────────────── -->
+<footer>
+  <div class="footer-bottom">
+    <div class="footer-logo"><span>sales</span>force · Employee Impact Council NL</div>
+    <div class="footer-links">
+      <a href="https://salesforce.benevity.org" target="_blank" rel="noopener">Log hours →</a>
+      <a href="https://salesforce.enterprise.slack.com/archives/C01N5C6GGTB" target="_blank" rel="noopener">#vto-nl</a>
+    </div>
+    <div class="footer-copy">56 paid VTO hours · every year · per person</div>
+    <div class="footer-astro">
+      <video autoplay loop muted playsinline>
+        <source src="./gifs%3Amovies/Astro-Superman-A-LookingAround-BlueBG.mov" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ─── FILTER ─────────────────────────────────────────────────────
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.activity-card');
+const countBadge = document.getElementById('count-badge');
+const colleaguesSection = document.getElementById('colleagues');
+const activitiesSection = document.getElementById('activities');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+
+    if (filter === 'fundraiser') {
+      activitiesSection.classList.add('hidden');
+      colleaguesSection.classList.remove('hidden');
+      countBadge.textContent = '2';
+      colleaguesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
+    activitiesSection.classList.remove('hidden');
+    colleaguesSection.classList.add('hidden');
+
+    let visible = 0;
+    cards.forEach(card => {
+      const show = filter === 'all' || card.dataset.cat === filter;
+      card.classList.toggle('hidden', !show);
+      if (show) visible++;
+    });
+    countBadge.textContent = visible;
+  });
+});
+
+// ─── QUICK PICK SCROLL ───────────────────────────────────────────
+function scrollToCard(nameFragment) {
+  const titles = document.querySelectorAll('.card-title');
+  for (const t of titles) {
+    if (t.textContent.includes(nameFragment)) {
+      t.closest('.activity-card').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      t.closest('.activity-card').style.outline = '3px solid #1B96FF';
+      setTimeout(() => { t.closest('.activity-card').style.outline = ''; }, 2000);
+      return false;
+    }
+  }
+}
+</script>
+</body>
+</html>
