@@ -524,6 +524,29 @@ footer {
   border: none; display: block;
 }
 
+/* ─── FEATURED / UPCOMING CARD ──────────── */
+.activity-card.featured {
+  border: 2px solid var(--sf-orange);
+  box-shadow: 0 4px 24px rgba(255,107,0,.18);
+}
+.upcoming-ribbon {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: linear-gradient(90deg, var(--sf-orange), #FFB000);
+  color: white; font-size: 10px; font-weight: 900;
+  text-transform: uppercase; letter-spacing: 1.2px;
+  padding: 3px 12px 3px 10px;
+  border-radius: 0 99px 99px 0;
+  margin-left: -22px;
+  margin-bottom: 4px;
+  align-self: flex-start;
+}
+.upcoming-ribbon::before {
+  content: "●";
+  font-size: 7px;
+  animation: blink 1.2s step-start infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
 /* hidden utility */
 .hidden { display: none !important; }
 </style>
@@ -609,9 +632,38 @@ footer {
 <!-- ─── ACTIVITIES ────────────────────────── -->
 <section class="activities-section" id="activities">
   <div class="section-heading">
-    Activities <span class="count-badge" id="count-badge">15</span>
+    Activities <span class="count-badge" id="count-badge">17</span>
   </div>
   <div class="activities-grid" id="activities-grid">
+
+    <!-- COMM FEATURED: Stichting Jarige Job -->
+    <div class="activity-card comm featured" data-cat="comm">
+      <div class="card-top"></div>
+      <div class="card-body">
+        <span class="upcoming-ribbon">Sep 21 · Rotterdam · 25 seats</span>
+        <div class="card-category">
+          <div class="cat-icon">🎂</div>
+          <span class="cat-label">Community &amp; Social</span>
+        </div>
+        <div class="card-title">Pack Birthday Boxes — Stichting Jarige Job</div>
+        <div class="card-desc">In the Netherlands, 176,000+ children can't celebrate their birthday because there's no money at home. Join us at the Van Nelle Fabriek in Rotterdam on September 21st to pack ±500 birthday boxes (€35 each) in one afternoon — festive decorations, treats, a gift and more for kids who deserve to feel special. Shifts are 3 hours including an introduction and team photo. Drinks, sweets &amp; parking provided. The Employee Impact Council NL has pre-funded 25 seats — first come, first served!</div>
+        <div class="card-tags">
+          <span class="tag cost">€35/person (pre-funded!)</span>
+          <span class="tag team">Team</span>
+          <span class="tag cust">Bring your customer ★</span>
+          <span class="tag time">3 hrs</span>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="https://salesforce.benevity.org/volunteer/21016/" target="_blank" rel="noopener" class="btn-link btn-signup">
+          Sign up on Benevity
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+        </a>
+        <a href="https://salesforce.okta.com/sso/idps/0oa94etsq8S0kxBCB697?stateTokenExternalId=Rlg4YURnRlpWVnBzbmI3SnBMZGx2UExoT2djRlpHT3N2T3EvY2wzdHBWZkNWY3pyR3p0aENWeUN6ek00bUVsUw" target="_blank" rel="noopener" class="btn-link btn-info">
+          More info
+        </a>
+      </div>
+    </div>
 
     <!-- ENV 1 -->
     <div class="activity-card env" data-cat="env">
