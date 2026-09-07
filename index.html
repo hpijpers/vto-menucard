@@ -628,6 +628,9 @@ footer {
     <button class="filter-btn" data-filter="fundraiser">
       <span class="dot" style="background:#FF6B00"></span>🧡 Fundraisers
     </button>
+    <button class="filter-btn" data-filter="cust">
+      <span class="dot" style="background:#FFD45A"></span>⭐ Bring your customer
+    </button>
   </div>
 </div>
 
@@ -1480,7 +1483,14 @@ filterBtns.forEach(btn => {
 
     let visible = 0;
     cards.forEach(card => {
-      const show = filter === 'all' || card.dataset.cat === filter;
+      let show;
+      if (filter === 'all') {
+        show = true;
+      } else if (filter === 'cust') {
+        show = !!card.querySelector('.tag.cust');
+      } else {
+        show = card.dataset.cat === filter;
+      }
       card.classList.toggle('hidden', !show);
       if (show) visible++;
     });
